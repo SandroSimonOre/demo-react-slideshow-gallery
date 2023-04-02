@@ -1,6 +1,5 @@
 // https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
-import { useEffect, useState } from 'react'
-
+import { useState } from 'react'
 import styles from './App.module.css'
 
 function App() {
@@ -32,10 +31,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log('renderizando')
-  })
-
   return (
     <div>
         <div className={styles.container}>
@@ -45,7 +40,7 @@ function App() {
               <div 
                 key={d.id} 
                 className={`${currentSlide === d.id ? styles.visible : styles.hidden }`}>
-                <div className={styles.numbertext}>{`${d.id} / ${data.length}`}</div>
+                <div className={styles.numberText}>{`${d.id} / ${data.length}`}</div>
                 <img src={`/images/${d.fileName}`} alt="" />
               </div>  
             ))
@@ -64,9 +59,9 @@ function App() {
           <div className={styles.row}>
             {
               data.map((d) => (
-                <div key={d.id} className={styles.column}>
+                <div key={d.id}>
                   <img 
-                    className={`${styles.demo} ${styles.cursor} ${currentSlide === d.id && styles.active}`} 
+                    className={`${styles.thumbnail} ${styles.cursor} ${currentSlide === d.id && styles.active}`} 
                     src={`/images/${d.fileName}`} 
                     onClick={() => setCurrentSlide(d.id)}
                     alt="" 
