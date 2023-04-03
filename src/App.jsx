@@ -1,8 +1,7 @@
-// https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
 import { useState } from 'react'
 import styles from './App.module.css'
 
-function App() {
+export default function App() {
 
   const [currentSlide, setCurrentSlide] = useState(1)
   
@@ -74,5 +73,3 @@ function App() {
     </div>
   )
 }
-
-export default App
