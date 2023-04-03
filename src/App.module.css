@@ -88,11 +88,13 @@
   opacity: 1;
 }
 
-.link {
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  display: inline-block;
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
   padding: 1rem;
-  width: 100%;
+}
+
+.links a {
+  color: white;
 }

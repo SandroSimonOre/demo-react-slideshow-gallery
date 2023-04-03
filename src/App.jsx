@@ -69,8 +69,12 @@ export default function App() {
           ))
         }
       </div>
-      <a className={styles.link} href="https://sandrosimon.com" target="_blank" rel="noopener noreferrer">sandrosimon.com</a>
-    </div>
+      <div className={styles.links}> 
+        <a href="https://sandrosimon.com" target="_blank" rel="noopener noreferrer">sandrosimon.com</a>
+        <a href="https://github.com/SandroSimonOre/demo-react-slideshow-gallery" target="_blank" rel="noopener noreferrer">Repositorio del proyecto</a>
+          
+      </div>
+      </div>
         
     
   )
