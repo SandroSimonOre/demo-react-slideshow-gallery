@@ -4,6 +4,11 @@
 
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .visible {
@@ -81,4 +86,13 @@
 .active,
 .thumbnail:hover {
   opacity: 1;
+}
+
+.link {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  padding: 1rem;
+  width: 100%;
 }

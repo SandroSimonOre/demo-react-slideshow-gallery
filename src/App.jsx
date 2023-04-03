@@ -31,45 +31,47 @@ export default function App() {
   }
 
   return (
-    <div>
-        <div className={styles.container}>
-       
-          {
-            data.map((d) => (
-              <div 
-                key={d.id} 
-                className={`${currentSlide === d.id ? styles.visible : styles.hidden }`}>
-                <div className={styles.numberText}>{`${d.id} / ${data.length}`}</div>
-                <img src={`/images/${d.fileName}`} alt="" />
-              </div>  
-            ))
-          }
-        
-          {/** Next and previous buttons */}
-          <span className={styles.prev} onClick={previousSlide}>&#10094;</span>
-          <span className={styles.next} onClick={nextSlide}>&#10095;</span>
+    
+    <div className={styles.container}>
+    
+      {
+        data.map((d) => (
+          <div 
+            key={d.id} 
+            className={`${currentSlide === d.id ? styles.visible : styles.hidden }`}>
+            <div className={styles.numberText}>{`${d.id} / ${data.length}`}</div>
+            <img src={`/images/${d.fileName}`} alt="" />
+          </div>  
+        ))
+      }
+    
+      {/** Next and previous buttons */}
+      <span className={styles.prev} onClick={previousSlide}>&#10094;</span>
+      <span className={styles.next} onClick={nextSlide}>&#10095;</span>
 
-          {/** Image text */}
-          <div className={styles.captionContainer}>
-            <p>{data[currentSlide - 1].description}</p>
-          </div>
+      {/** Image text */}
+      <div className={styles.captionContainer}>
+        <p>{data[currentSlide - 1].description}</p>
+      </div>
 
-          {/** Thumbnail images */}
-          <div className={styles.row}>
-            {
-              data.map((d) => (
-                <div key={d.id}>
-                  <img 
-                    className={`${styles.thumbnail} ${styles.cursor} ${currentSlide === d.id && styles.active}`} 
-                    src={`/images/${d.fileName}`} 
-                    onClick={() => setCurrentSlide(d.id)}
-                    alt="" 
-                  />
-                </div>  
-              ))
-            }
-          </div>
-        </div>
+      {/** Thumbnail images */}
+      <div className={styles.row}>
+        {
+          data.map((d) => (
+            <div key={d.id}>
+              <img 
+                className={`${styles.thumbnail} ${styles.cursor} ${currentSlide === d.id && styles.active}`} 
+                src={`/images/${d.fileName}`} 
+                onClick={() => setCurrentSlide(d.id)}
+                alt="" 
+              />
+            </div>  
+          ))
+        }
+      </div>
+      <a className={styles.link} href="https://sandrosimon.com" target="_blank" rel="noopener noreferrer">sandrosimon.com</a>
     </div>
+        
+    
   )
 }
